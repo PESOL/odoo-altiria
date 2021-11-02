@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
   <data>
     <record id="view_sms_status_form" model="ir.ui.view">
       <field name="name">view.sms.status.form</field>
@@ -85,4 +85,4 @@
     <menuitem id="sms_altiria_creck_credit" parent="sms_altiria_status_menu" action="sms_altiria.sms_altiria_get_credit_action" sequence="20"/>
 
   </data>
-</openerp>
+</odoo>

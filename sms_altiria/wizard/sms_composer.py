@@ -10,7 +10,8 @@ class SendSMS(models.TransientModel):
 
     def action_send_sms_mass_now(self):
         sms_api = self.env['sms.api']
-        active_ids = self.env.context.get('active_ids')
+        self.composition_mode = 'mass'
+        active_ids = self.env.context.get('active_ids', False) or self.env.context.get('default_res_id', False) or self.env.context.get('default_res_ids', False)
         model = self.env[self.res_model]
         records = model.browse(active_ids)
         numbers = []
@@ -18,3 +19,6 @@ class SendSMS(models.TransientModel):
         for record in records.filtered(lambda r: r.mobile):
             numbers.append(record.mobile)
         sms_api.with_context(self.env.context)._send_sms(numbers, msg)
+
+    def action_send_sms(self):
+        self.action_send_sms_mass_now()

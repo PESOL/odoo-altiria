@@ -5,7 +5,7 @@
 
 import requests
 
-from openerp import models, api, _
+from odoo import models, api, _
 
 
 class SmsApi(models.AbstractModel):
@@ -18,7 +18,7 @@ class SmsApi(models.AbstractModel):
         model = self.env[active_model]
         company = self.env.user.company_id
         create_log = False
-        if self.env.context.get('default_composition_mode') == 'mass':
+        if self.env.context.get('default_composition_mode') in ['mass', 'comment']:
             create_log = True
         sms_status_obj = self.env['sms.status']
         url = 'http://www.altiria.net/api/http'
