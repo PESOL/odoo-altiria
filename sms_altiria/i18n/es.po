@@ -158,3 +158,26 @@ msgstr "Usuario"
 #: model:ir.model,name:sms_altiria.model_sms_status
 msgid "sms.status"
 msgstr ""
+
+#. module: sms_altiria
+#: code:addons/sms_altiria/models/sms_status.py:0
+#, python-format
+msgid "Available balance: "
+msgstr "Saldo disponible: "
+
+#. module: sms_altiria
+#: code:addons/sms_altiria/models/sms_status.py:0
+#, python-format
+msgid "Balance"
+msgstr "Saldo"
+
+#. module: sms_altiria
+#: model:ir.model.fields,field_description:sms_altiria.field_sms_status__message
+msgid "Message"
+msgstr "Mensaje"
+
+
+#. module: sms_altiria
+#: model:ir.model.fields,field_description:sms_altiria.field_crm_lead__phone_new
+msgid "phone"
+msgstr "Teléfono"

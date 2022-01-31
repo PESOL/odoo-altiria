@@ -42,6 +42,8 @@ class SmsStatus(models.Model):
     status = fields.Char(
         string='Status')
 
+    message = fields.Char(string='Message')
+    
     def get_credit(self):
         url = 'http://www.altiria.net/api/http'
         company = self.env.user.company_id
@@ -57,5 +59,14 @@ class SmsStatus(models.Model):
         valid = str(r.content).find('OK')
         if valid == -1:
             raise UserError(r.text)
-        raise UserError(
-            _('Saldo Disponible: ' + r.text.split(':')[1]))
+       
+        return{
+        'type': 'ir.actions.client',
+         'tag': 'display_notification',
+        'params': {
+        'title': _('Balance'),
+        'message':_( 'Available balance: ') + r.text.split(':')[1],
+        'type':'info',  #types: success,warning,danger,info
+        'sticky': True,  #True/False will display for few seconds if false
+        }    ,
+      }

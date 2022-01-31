@@ -71,7 +71,8 @@ class SmsApi(models.AbstractModel):
                             'model_name': _(partner_id._description),
                             'model_id': partner_id.id,
                             'phone_number': number,
-                            'user_id': user_id
+                            'user_id': user_id,
+                            'message':message
                         })
                         if create_log:
                             subtype_id = self.env['mail.message.subtype'].search([
@@ -106,7 +107,8 @@ class SmsApi(models.AbstractModel):
                             'model_name': _(model_id._description),
                             'model_id': model_id.id,
                             'phone_number': number,
-                            'user_id': user_id
+                            'user_id': user_id,
+                            'message':message
                         })
                         if create_log:
                             subtype_id = self.env['mail.message.subtype'].search([

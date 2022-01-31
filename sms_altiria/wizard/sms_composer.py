@@ -22,3 +22,4 @@ class SendSMS(models.TransientModel):
 
     def action_send_sms(self):
         self.action_send_sms_mass_now()
+        

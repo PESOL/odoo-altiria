@@ -9,3 +9,4 @@ from . import sms
 from . import sms_status
 from . import partner
 from . import sms_sms
+from . import crm_lead

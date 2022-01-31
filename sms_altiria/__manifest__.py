@@ -15,13 +15,15 @@
     'depends': [
         'base',
         'mail',
-        'sms'
+        'sms',
+        'crm'
     ],
     'data': [
         'data/sms_status_multicompany.xml',
         'views/company_view.xml',
         'views/partner_view.xml',
         'views/sms_status_view.xml',
+        'views/crm_lead_view.xml',
         'wizard/sms_composer_views.xml',
         'security/sms_security.xml',
         'security/ir.model.access.csv'

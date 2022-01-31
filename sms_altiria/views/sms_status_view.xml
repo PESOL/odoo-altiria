@@ -8,14 +8,16 @@
         <form string="SMS Status">
           <sheet>
             <group name="main">
-              <field name="partner_id"/>
-              <field name="phone_number"/>
-              <field name="model_name"/>
-              <field name="model_id"/>
-              <field name="status"/>
-              <field name="user_id"/>
-              <field name="sended"/>
-              <field name="company_id" invisible="1"/>
+              <field name="partner_id" />
+              <field name="phone_number" />
+              <field name="model_name" />
+              <field name="model_id" />
+              <field name="status" />
+              <field name="user_id" />
+              <field name="sended" />
+              <field name="company_id" invisible="1" />
+              <field name="message" />
+              
             </group>
           </sheet>
         </form>
@@ -27,15 +29,15 @@
       <field name="model">sms.status</field>
       <field name="arch" type="xml">
         <tree string="SMS Status">
-          <field name="create_date"/>
-          <field name="partner_id"/>
-          <field name="phone_number"/>
-          <field name="model_name"/>
-          <field name="model_id"/>
-          <field name="status"/>
-          <field name="user_id"/>
-          <field name="sended"/>
-          <field name="company_id" invisible="1"/>
+          <field name="create_date" />
+          <field name="partner_id" />
+          <field name="phone_number" />
+          <field name="model_name" />
+          <field name="model_id" />
+          <field name="status" />
+          <field name="user_id" />
+          <field name="sended" />
+          <field name="company_id" invisible="1" />
         </tree>
       </field>
     </record>
@@ -45,18 +47,18 @@
       <field name="model">sms.status</field>
       <field name="arch" type="xml">
         <search string="SMS Status">
-          <field name="partner_id"/>
-          <field name="phone_number"/>
-          <field name="model_name"/>
-          <field name="model_id"/>
-          <field name="user_id"/>
-          <field name="company_id"/>
-          <field name="create_date"/>
+          <field name="partner_id" />
+          <field name="phone_number" />
+          <field name="model_name" />
+          <field name="model_id" />
+          <field name="user_id" />
+          <field name="company_id" />
+          <field name="create_date" />
           <group string="Group By" name="groupby">
-            <filter name="model_name_groupby" string="Model Name" context="{'group_by': 'model_name'}"/>
-            <filter name="user_id_groupby" string="User" context="{'group_by': 'user_id'}"/>
-            <filter name="phone_number_groupby" string="Phone Number" context="{'group_by': 'phone_number'}"/>
-            <filter name="create_date_groupby" string="Date" context="{'group_by': 'create_date'}"/>
+            <filter name="model_name_groupby" string="Model Name" context="{'group_by': 'model_name'}" />
+            <filter name="user_id_groupby" string="User" context="{'group_by': 'user_id'}" />
+            <filter name="phone_number_groupby" string="Phone Number" context="{'group_by': 'phone_number'}" />
+            <filter name="create_date_groupby" string="Date" context="{'group_by': 'create_date'}" />
           </group>
         </search>
       </field>
@@ -77,12 +79,15 @@
       <field name="type">ir.actions.server</field>
       <field name="state">code</field>
       <field name="name">Get Credit</field>
-      <field name="model_id" ref="model_sms_status"/>
-      <field name="code">model.get_credit()</field>
+      <field name="model_id" ref="model_sms_status" />
+      <field name="state" >code</field>
+      <field name="code">action = model.get_credit()</field>
     </record>
 
-    <menuitem id="sms_altiria_status_menu" action="sms_altiria.sms_altiria_status_action" sequence="20" web_icon="sms_altiria,static/description/icon.png"/>
-    <menuitem id="sms_altiria_creck_credit" parent="sms_altiria_status_menu" action="sms_altiria.sms_altiria_get_credit_action" sequence="20"/>
+    <menuitem id="sms_altiria_status_menu" action="sms_altiria.sms_altiria_status_action" sequence="20"
+      web_icon="sms_altiria,static/description/icon.png" />
+    <menuitem id="sms_altiria_creck_credit" parent="sms_altiria_status_menu"
+      action="sms_altiria.sms_altiria_get_credit_action" sequence="20" />
 
   </data>
 </odoo>
