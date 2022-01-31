@@ -5,13 +5,13 @@
 
 
 {
-    'name': 'Altiria SMS Gateway',
+    'name': 'Altiria SMS',
     'version': '13.0.0.0.1',
     'license': 'AGPL-3',
     'category': 'Comunication',
     'sequence': 1,
     'complexity': 'easy',
-    'author': 'PESOL, Odoo Community Association (OCA)',
+    'author': 'Altiria, PESOL, Odoo Community Association (OCA)',
     'depends': [
         'base',
         'mail',
@@ -28,5 +28,7 @@
         'security/sms_security.xml',
         'security/ir.model.access.csv'
     ],
+
+    'images':['static/description/banner.png'],
     'installable': True,
 }

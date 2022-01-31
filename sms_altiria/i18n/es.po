@@ -130,12 +130,12 @@ msgstr "Contraseña"
 #: model_terms:ir.ui.view,arch_db:sms_altiria.view_sms_status_search
 #: model_terms:ir.ui.view,arch_db:sms_altiria.view_sms_status_tree
 msgid "SMS Status"
-msgstr "Estado SMS"
+msgstr "Altiria SMS"
 
 #. module: sms_altiria
 #: model:ir.model,name:sms_altiria.model_sms_composer
 msgid "Send SMS Wizard"
-msgstr "Enviar asistente de SMS"
+msgstr "Asistente de envío de SMS"
 
 #. module: sms_altiria
 #: model:ir.model.fields,field_description:sms_altiria.field_sms_status__sended
